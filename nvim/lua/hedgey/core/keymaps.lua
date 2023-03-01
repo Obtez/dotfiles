@@ -1,7 +1,14 @@
 vim.g.mapleader = ' '
 
+-------------------------------------------------------
+-- General
+-------------------------------------------------------
+vim.keymap.set('i', 'jk', '<ESC>')
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 
+-------------------------------------------------------
+-- In-File Navigation
+-------------------------------------------------------
 vim.keymap.set('n', '<C-d>', '<C-d>zz') -- move half page down and center
 vim.keymap.set('n', '<C-u>', '<C-u>zz') -- move half page up and center
 
