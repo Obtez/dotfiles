@@ -28,9 +28,3 @@ Remapped to: `' '` (`<Space>`)
 (n) `<leader>tx` - Close current tab.
 (n) `<leader>tn` - Go to next tab.
 (n) `<leader>tp` - Go to previous tab.
-
-
-## TODO
-- fix `<leader>gs`
-- Todo file
-- `<leader>sw -> <C-w>w`
