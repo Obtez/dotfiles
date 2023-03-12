@@ -56,6 +56,8 @@ local function config()
 
     dashboard.section.header.val = ferris_happy
     dashboard.section.buttons.val = buttons
+    dashboard.section.header.opts.hl = 'Number'
+
     alpha.setup(dashboard.opts)
 end
 
