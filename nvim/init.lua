@@ -1,4 +1,3 @@
-require('hedgey.core.keymaps')
-require('hedgey.core.options')
-require('hedgey.core.autocmds')
-require('hedgey.packer')
+require('core')
+require('plugins')
+require('plugin_config')
