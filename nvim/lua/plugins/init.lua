@@ -3,6 +3,7 @@ local plugins = {
     require('plugins.telescope-fzf-native'),
     require('plugins.telescope'),
     require('plugins.alpha'),
+    require('plugins.nvim-tree'),
     require('plugins.lualine'),
     require('plugins.nvim-treesitter'),
     require('plugins.trouble'),
