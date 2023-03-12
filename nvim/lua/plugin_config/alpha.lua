@@ -54,9 +54,24 @@ local function config()
 
     }
 
+    local footer_messages = {
+        'Days stuck in Vim: 45',
+        '10000111100101100',
+        '0x45',
+        'Vim btw.',
+        'How do I exit Vim?'
+    }
+    local function get_footer_message()
+       return footer_messages[math.random(#footer_messages)]
+    end
+
     dashboard.section.header.val = ferris_happy
-    dashboard.section.buttons.val = buttons
     dashboard.section.header.opts.hl = 'Number'
+
+    dashboard.section.buttons.val = buttons
+
+    dashboard.section.footer.val = get_footer_message
+    dashboard.section.footer.opts.hl = 'text'
 
     alpha.setup(dashboard.opts)
 end
