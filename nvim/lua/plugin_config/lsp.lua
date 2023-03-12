@@ -28,19 +28,12 @@ local function config()
     lsp.ensure_installed({
         'tsserver',
         'rust_analyzer',
+        'eslint',
+        'html',
     })
 
     -- Fix Undefined global 'vim'
-    lsp.configure('lua-language-server', {
-        settings = {
-            Lua = {
-                diagnostics = {
-                    globals = { 'vim' }
-                }
-            }
-        }
-    })
-
+    lsp.nvim_workspace()
 
     local cmp = require('cmp')
     local cmp_select = {behavior = cmp.SelectBehavior.Select}
@@ -68,6 +61,17 @@ local function config()
         }
     })
 
+    local mason_null_ls = require('mason-null-ls')
+    mason_null_ls.setup({
+        ensure_installed = {
+            'prettier',
+            'stylua',
+            'eslint_d'
+        },
+        automatic_installation = true,
+    })
+
+
     lsp.on_attach(function(client, bufnr)
         local opts = {buffer = bufnr, remap = false}
 
@@ -81,7 +85,7 @@ local function config()
         vim.keymap.set('n', '<leader>vrr', function() vim.lsp.buf.references() end, opts)
         vim.keymap.set('n', '<leader>vrn', function() vim.lsp.buf.rename() end, opts)
         vim.keymap.set('i', '<C-h>', function() vim.lsp.buf.signature_help() end, opts)
-        vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format() end, opts)
+        vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format { async = true } end, opts)
     end)
 
     lsp.setup()

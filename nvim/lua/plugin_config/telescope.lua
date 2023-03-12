@@ -1,7 +1,8 @@
 local M = {}
 
 local config = function()
-    require('telescope').setup()
+    local telescope = require('telescope')
+    telescope.load_extension('fzf')
 end
 
 M.tag = '0.1.1'
