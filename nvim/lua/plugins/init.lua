@@ -4,6 +4,7 @@ local plugins = {
     require('plugins.telescope'),
     require('plugins.alpha'),
     require('plugins.nvim-tree'),
+    require('plugins.vim-maximizer'),
     require('plugins.lualine'),
     require('plugins.nvim-treesitter'),
     require('plugins.trouble'),
