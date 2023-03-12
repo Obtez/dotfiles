@@ -7,7 +7,8 @@ local config = function()
         'typescript',
         'c',
         'lua',
-        'rust'
+        'rust',
+        'vim'
     },
     sync_install = false,
     auto_install = true,
